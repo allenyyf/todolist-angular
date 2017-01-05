@@ -1,0 +1,11 @@
+//{basename} /css/style.less => style.less
+//{fullpath} /css/style.less => /css/style.less (unchanged)
+//{filename} /css/style.less => style
+//{extname}  /css/style.less => .less
+//{directory} /css/style.less => /css/
+exports.watchList = [
+    [/^.*coffee$/,'coffee -c {fullpath}']
+    ,[/^.*less$/,'lessc {fullpath} > {directory}{filename}.css && ./debug/notify "CSS compiled"']
+    ,[/^.*\.ts$/,'tsc -p ./src/&& ./debug/notify "TS compiled"']
+    ,[/^.*script\/.*\.js/,"./debug/createRequire && ./debug/notify 'Debug require compiled'"]
+]
