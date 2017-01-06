@@ -16,7 +16,7 @@ var AppComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: "app-start",
-            templateUrl: "app.component.html",
+            template: "\n        <h1>ToDo List</h1>\n        <items-list></items-list>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

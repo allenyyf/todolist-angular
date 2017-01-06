@@ -1,4 +1,7 @@
+    <div class="todo-item" [class.completed]="item.status">
+        <input class="toggle" type="checkbox" (click)="toggleItemStatus(item)" [checked]="item.status">
+        <input class="item-container" value="{{item.content}}">
+        <button class="destroy" (click)="removeTodo(item)"></button>
+    </div>
 
 
-
-<input placeholder="请输入">

@@ -11,11 +11,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var Item = (function () {
     function Item() {
+        this.content = "";
+        this.status = false;
+        this.id = 1;
     }
+    Item.prototype.removeItem = function () { };
+    Item.prototype.toggleItemStatus = function (item) {
+        console.log(item);
+        return item.status = !item.status;
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Item)
+    ], Item.prototype, "item", void 0);
     Item = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: "items-box",
+            selector: "todo-item",
             templateUrl: "item.component.html"
         }), 
         __metadata('design:paramtypes', [])
