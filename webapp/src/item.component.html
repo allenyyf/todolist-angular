@@ -1,7 +1,10 @@
-    <div class="todo-item" [class.completed]="item.status">
-        <input class="toggle" type="checkbox" (click)="toggleItemStatus(item)" [checked]="item.status">
-        <input class="item-container" value="{{item.content}}">
-        <button class="destroy" (click)="removeTodo(item)"></button>
+    <div class="todo-item">
+        <div class="circle" (click)="toggleItemStatus(item)">
+            <span class="gou">
+                <i class="iconfont icon-duigou" [class.hide]="!item.status"></i>
+            </span>
+        </div>
+        <input class="item-container" value="{{item.content}}" 
+               [class.completed]="item.status" (keydown.enter)="updateItemContent(item)">
+        <span class="delete" (click)="removeItem(item)">X</span>
     </div>
-
-

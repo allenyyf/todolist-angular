@@ -11,24 +11,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var Item = (function () {
     function Item() {
+        this.removeItemNum = new core_1.EventEmitter();
         this.content = "";
         this.status = false;
         this.id = 1;
     }
-    Item.prototype.removeItem = function () { };
     Item.prototype.toggleItemStatus = function (item) {
         console.log(item);
         return item.status = !item.status;
+    };
+    Item.prototype.removeItem = function (item) {
+        this.removeItemNum.emit(item);
+        console.log(item);
+    };
+    Item.prototype.updateItemContent = function () {
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Item)
     ], Item.prototype, "item", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], Item.prototype, "removeItemNum", void 0);
     Item = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: "todo-item",
-            templateUrl: "item.component.html"
+            templateUrl: "item.component.html",
+            styleUrls: ["item.component.css"]
         }), 
         __metadata('design:paramtypes', [])
     ], Item);
