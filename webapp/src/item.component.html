@@ -4,7 +4,8 @@
                 <i class="iconfont icon-duigou" [class.hide]="!item.status"></i>
             </span>
         </div>
-        <input class="item-container" value="{{item.content}}" 
-               [class.completed]="item.status" (keydown.enter)="updateItemContent(item)">
-        <span class="delete" (click)="removeItem(item)">X</span>
+        <input class="item-container" [(ngModel)]="item.content" [class.completed]="item.status">
+        <span class="delete" (click)="removeItem(item.id)">X</span>
     </div>
+
+<!--(keydown.enter)="updateItemContent(item)"-->
