@@ -8,12 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+require("./rxjs-operater");
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var angular2_mdl_1 = require("angular2-mdl");
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
+var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
+var handle_data_1 = require("./handle-data");
 var item_component_1 = require('./item.component');
 var list_component_1 = require("./list.component");
 var AppModule = (function () {
@@ -21,9 +24,9 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, angular2_mdl_1.MdlModule, ng_bootstrap_1.NgbModule],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, angular2_mdl_1.MdlModule, ng_bootstrap_1.NgbModule, http_1.HttpModule],
             declarations: [app_component_1.AppComponent, item_component_1.Item, list_component_1.List],
-            // providers:[],
+            providers: [handle_data_1.HandleData],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
