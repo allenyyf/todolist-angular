@@ -1,0 +1,41 @@
+.header {
+  width: 340px;
+}
+.header .new-todo {
+  width: 340px;
+  height: 50px;
+  outline: none;
+  text-align: center;
+  font-size: 30px;
+}
+.main .todo-list {
+  padding: 0;
+  margin: 0;
+}
+.footer {
+  width: 340px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer .show-all-items,
+.footer .show-done-items,
+.footer .show-todo-items,
+.footer .clear-done-items {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 2px 4px;
+}
+.footer .show-all-items:hover,
+.footer .show-done-items:hover,
+.footer .show-todo-items:hover,
+.footer .clear-done-items:hover {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.click {
+  background: #000;
+  color: #fff;
+}

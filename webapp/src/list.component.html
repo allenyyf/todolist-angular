@@ -1,0 +1,19 @@
+
+  <div class="header">
+    <input class="new-todo" placeholder="todo list" autofocus="" [(ngModel)]="newItem.content" (keyup.enter)="addItem()">
+  </div>
+  <div class="main" *ngIf="showItems.length > 0">
+    <ul class="todo-list">
+      <todo-item *ngFor="let item of showItems" [item]="item" (removeItemNum)="removeItem($event)">
+      </todo-item>
+    </ul>
+  </div>
+  <div class="footer" *ngIf="items.length > 0">
+    <span class="todo-count"><strong>{{items.length}}</strong> {{items.length == 1 ? 'item' : 'items'}} left</span>
+    <span class="show-all-items" (click)="showAllItems()" [class.click]="clickTab=='all'">ALL</span>
+    <span class="show-done-items" (click)="showDoneItems()" [class.click]="clickTab=='done'">Done</span>
+    <span class="show-todo-items" (click)="showTodoItems()" [class.click]="clickTab=='todo'">Todo</span>
+    <span class="clear-done-items" (click)="clearDoneItems()">Clear</span>
+  </div>
+
+  <!--(updateItemData)="updateItem($event)"-->
